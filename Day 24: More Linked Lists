@@ -1,0 +1,19 @@
+
+
+    def removeDuplicates(self,head):
+        previous = head
+        s = set()
+        s.add(previous.data)
+        current = previous.next
+        while current:
+            if current.data in s:
+                previous.next = current.next
+            else:
+                s.add(current.data)
+                previous = current
+            current = current.next
+        return head
+
+
+
+
